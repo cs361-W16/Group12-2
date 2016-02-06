@@ -41,6 +41,7 @@ public class ApplicationController {
         g.buildDeck();
         g.shuffle();
         g.dealFour();
+        g.error = false;
 
         return Results.json().render(g);
     }
@@ -59,7 +60,7 @@ public class ApplicationController {
 
     public Result moveCard(Context context, @PathParam("columnFrom") int colFrom, @PathParam("columnTo") int colTo, Game g){
         g.move(colFrom,colTo);
-        return  Results.json().render(g);
+        return Results.json().render(g);
     }
 
 }
