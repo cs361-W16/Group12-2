@@ -9,10 +9,15 @@ import java.util.Random;
  */
 public class Game {
 
+    public boolean error;
+
     public java.util.List<Card> deck = new ArrayList<>();
 
     public java.util.List<java.util.List<Card>> cols = new ArrayList<>();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6bb2e985a5b14638ac28dec3ad47aa8923f2d683
 
     public Game(){
         cols.add(new ArrayList<Card>());
