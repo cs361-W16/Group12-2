@@ -193,7 +193,27 @@ $("#c4").dblclick(function(){
 
 function remove_function()
 {
-$("
+$("#c0 img: last-child").dblclick(function(){
+    removeCard(0);
+});
+$("#c1 img: last-child").dblclick(function(){
+    removeCard(1);
+});
+$("#c2 img: last-child").dblclick(function(){
+    removeCard(2);
+});
+$("#c2 img: last-child").dblclick(function(){
+    removeCard(3);
+});
+$(".cardLocation:last-child").click(function(){
+if($(this).hasClass("selected"))
+    $(this).removeClass("selected"));
+else{
+    $(".cardLocation").removeClass("selected");
+    $(this).addClass("selected";
+    }
+    });
+ }
 
 $("#moveButton").click(function(){
 var colFrom = $("#from_col").val();
