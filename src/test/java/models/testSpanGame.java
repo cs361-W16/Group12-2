@@ -29,4 +29,12 @@ public class testSpanGame {
         assertNotEquals(2,g.deck.get(0).getValue());
     }
 
+    @Test
+    public void testSpanGameRemove(){
+        Game g = new Game();
+        g.buildDeck();
+        g.customDeal(0,3,6,9);
+        g.remove(2);
+        assertEquals(0,g.cols.get(2).size());
+    }
 }
