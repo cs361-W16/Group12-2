@@ -36,6 +36,9 @@ public class SpanGame extends Game{
         return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
     }
 
+/**
+ The remove looks good. Should work the same way as the english version of the game -Derek
+ */
     public void remove(int columnNumber) {
         if(colHasCards(columnNumber)) {
             Card c = getTopCard(columnNumber);
