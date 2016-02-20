@@ -24,4 +24,43 @@ public class SpanGame extends Game{
             deck.add(new Card(i,Suit.Spades));
         }
     }
+
+    private boolean colHasCards(int colNumber) {
+        if(this.cols.get(colNumber).size()>0){
+            return true;
+        }
+        return false;
+    }
+
+    private Card getTopCard(int columnNumber) {
+        return this.cols.get(columnNumber).get(this.cols.get(columnNumber).size()-1);
+    }
+
+/**
+ The remove looks good. Should work the same way as the english version of the game -Derek
+ */
+    public void remove(int columnNumber) {
+        if(colHasCards(columnNumber)) {
+            Card c = getTopCard(columnNumber);
+            boolean removeCard = false;
+            for (int i = 0; i < 4; i++) {
+                if (i != columnNumber) {
+                    if (colHasCards(i)) {
+                        Card compare = getTopCard(i);
+                        if (compare.getSuit() == c.getSuit()) {
+                            if (compare.getValue() > c.getValue()) {
+                                removeCard = true;
+                            }
+                        }
+                    }
+                }
+            }
+            if (removeCard) {
+                this.cols.get(columnNumber).remove(this.cols.get(columnNumber).size() - 1);
+                error = false;
+            }
+            else
+                error = true;
+        }
+    }
 }
