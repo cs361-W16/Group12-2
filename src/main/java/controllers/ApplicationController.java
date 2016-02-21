@@ -17,6 +17,7 @@
 package controllers;
 
 import models.Game;
+import models.SpanGame;
 import ninja.Context;
 import ninja.Result;
 import ninja.Results;
@@ -50,6 +51,15 @@ public class ApplicationController {
         return Results.json().render(g);
     }
 
+    public Result gameSpanGet(){
+        SpanGame g = new SpanGame();
+        g.buildDeck();
+        g.shuffle();
+        g.dealFour();
+        g.error = false;
+
+        return Results.json().render(g);
+    }
     public Result dealPost(Context context, Game g) {
         if(context.getRequestPath().contains("deal")){
             g.dealFour();

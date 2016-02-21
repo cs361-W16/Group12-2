@@ -129,13 +129,13 @@ if(game.error == true){
   }
   }
 
-$.getJSON("http://localhost:8080/game", function( data ) {
+$.getJSON("http://localhost:8080/Spangame", function( data ) {
 display(data);
 game = data;
 });
 
 $("#Restart").click(function(){
-    $.getJSON("http://localhost:8080/game", function( data ) {
+    $.getJSON("http://localhost:8080/Spangame", function( data ) {
     display(data);
     game = data;
     });
