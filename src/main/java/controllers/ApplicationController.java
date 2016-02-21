@@ -35,7 +35,11 @@ public class ApplicationController {
     public Result acesUp() {
         return Results.html().template("views/AcesUp/AcesUp.flt.html");
     }
-    
+
+    public Result spanishAcesUp() {
+        return Results.html().template("views/AcesUp/SpanishAcesUp.flt.html");
+    }
+
     public Result gameGet(){
         Game g = new Game();
         g.buildDeck();
