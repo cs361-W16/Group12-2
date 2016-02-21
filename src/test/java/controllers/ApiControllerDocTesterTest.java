@@ -30,7 +30,8 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
     
     String URL_INDEX = "/";
     String URL_ACES_UP = "/AcesUp";
-    
+    String URL_SPANISH_ACES_UP = "/SpanishAcesUp";
+
     @Test
     public void testGetIndex() {
 
@@ -52,4 +53,13 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.payload, containsString("columnOfCards"));
     }
 
+    @Test
+    public void testSpanishAcesUp() {
+        Response response = makeRequest(
+                Request.GET().url(
+                        testServerUrl().path(URL_SPANISH_ACES_UP)));
+
+        assertThat(response.payload, containsString("Aces Up"));
+        assertThat(response.payload, containsString("columnOfCards"));
+    }
 }
